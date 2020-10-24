@@ -1,0 +1,17 @@
+<h1>Edit your post!</h1>
+
+<form method="POST" action="/posts/<%= @bets.id%>">
+    <input type="hidden" id="hidden" name="_method" value="PATCH">
+    <select name="user_id">
+        <% @users.each do | user |%>
+            <option value="<%= user.id %>"><%= user.username %></option>
+        <% end %>
+    </select><br />
+
+    Team: <input type="text" name="team"><br />
+
+
+</form>
+    
+
+
