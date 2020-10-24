@@ -18,5 +18,10 @@ class BetsController < ApplicationController
 
     post '/bets' do
         bet = Bet.new(params)
+        if bet.save
+            redirect "bets/#{bet.id}"
+        else
+            redirect "todos/new"
+        end
     end
 end
