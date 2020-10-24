@@ -1,9 +1,14 @@
 class BetsController < ApplicationController
 
     get '/bets' do
-        @bets = Bet.all
-        erb :"bets/index"
+        if logged_in?
+            @bets = Bet.all
+            erb :"bets/index"
+        else
+            redirect "/login"
+        end
     end
+
 
     get '/bets/new' do
         Bet.new
@@ -11,7 +16,6 @@ class BetsController < ApplicationController
     end
 
     get '/bets/:id' do 
-        id = params[:id]
         @bet = Bet.find_by_id(id)
         erb :"bets/show"
     end
@@ -27,8 +31,13 @@ class BetsController < ApplicationController
 
     get '/bets/:id/edit' do
         @users = User.all
-        @bet = Bet.find_by_id(id)
-        erb :"bets/edit"
+        @bet = Bet.find_by_id([:id])
+        if @bet.user.id == current_user.id
+            erb :"bets/edit"
+        else
+            redirect "/bets"
+        end
+            
     end
 
     patch '/bets/:id' do

@@ -9,3 +9,4 @@ use Rack::MethodOverride
 run ApplicationController
 use BetsController
 use UsersController
+use SessionsController
