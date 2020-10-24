@@ -17,6 +17,6 @@ class BetsController < ApplicationController
     end
 
     post '/bets' do
-        binding.pry
+        bet = Bet.new(params)
     end
 end
