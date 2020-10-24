@@ -1,7 +1,7 @@
-<h1> I love html </h1>
+<h1> Here are your bets! </h1>
 
 <ul>
     <% @bets.each do | bet | %>
-        <li><%= bet.team %></li>
+        <li><a href="/bets/<%= bet.id%>"> <%= bet.team %> </a></li>
     <% end  %>
 </ul>
