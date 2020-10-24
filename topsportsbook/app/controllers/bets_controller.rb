@@ -5,9 +5,16 @@ class BetsController < ApplicationController
         erb :"bets/index"
     end
 
+    get '/bets/new' do
+        Bet.new
+        erb :"bets/new"
+    end
+
     get '/bets/:id' do 
         id = params[:id]
         @bet = Bet.find_by_id(id)
         erb :"bets/show"
     end
+
+    
 end
