@@ -16,5 +16,7 @@ class BetsController < ApplicationController
         erb :"bets/show"
     end
 
-    
+    post '/bets' do
+        binding.pry
+    end
 end
