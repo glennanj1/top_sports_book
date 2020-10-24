@@ -6,5 +6,6 @@ end
 
 
 use Rack::MethodOverride
-use BetsController
 run ApplicationController
+use BetsController
+use UsersController
