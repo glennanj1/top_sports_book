@@ -1,9 +1,7 @@
 <h1> I love html </h1>
 
 <ul>
-
-<% bets.each do |bet| %>
-    <li><%= bet.username %></li>
-<% end %>
-
+    <% @bets.each do | bet | %>
+        <li><%= bet.team %></li>
+    <% end  %>
 </ul>
