@@ -41,4 +41,12 @@ class BetsController < ApplicationController
         end
     end
 
+    delete '/bets/:id' do
+        @bet = Bet.find_by_id(params[:id])
+        @post.destroy
+        redirect "/posts"
+    end
+
+    
+
 end
