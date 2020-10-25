@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     post '/users' do 
         @user = User.new(params)
         if @user && @user.save
-            session[:user_id] = user.user_id
+            session[:user_id] = @user.id
             redirect "/bets"
         else
             erb:"users/signup"

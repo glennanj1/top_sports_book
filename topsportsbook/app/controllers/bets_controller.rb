@@ -31,8 +31,8 @@ class BetsController < ApplicationController
 
     get '/bets/:id/edit' do
         @users = User.all
-        @bet = Bet.find_by_id(params[:id])
-        if @bet.user.id == current_user.id
+        @bet = Bet.find_by(params[:id])
+        if @bet.user_id == current_user.id
             erb :"bets/edit"
         else
             redirect "/bets"
