@@ -4,7 +4,8 @@ class UsersController < ApplicationController
         erb :"users/signup"
     end
 
-    post '/users' do 
+    post '/users' do
+        binding.pry
         @user = User.new(params)
         if @user && @user.save
             session[:user_id] = @user.id
