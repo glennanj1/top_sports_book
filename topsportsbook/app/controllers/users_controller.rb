@@ -5,12 +5,12 @@ class UsersController < ApplicationController
     end
 
     post '/users' do
-        binding.pry
         @user = User.new(params)
         if @user && @user.save
             session[:user_id] = @user.id
             redirect "/bets"
         else
+        binding.pry
             erb :"users/signup"
         end
     end

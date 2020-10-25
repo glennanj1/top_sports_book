@@ -24,7 +24,7 @@ class BetsController < ApplicationController
         if bet.save
             redirect "bets/#{bet.id}"
         else
-            redirect "todos/new"
+            redirect "bets/new"
         end
     end
 
