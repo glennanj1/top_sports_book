@@ -44,7 +44,7 @@ class BetsController < ApplicationController
         @bet = Bet.find_by_id(params[:id])
         params.delete("_method")
         if @bet.update(params)
-            redirect "/bets/#{@bets.id}"
+            redirect "/bets/#{@bet.id}"
         else
             redirect "bets/new"
         end
@@ -52,8 +52,8 @@ class BetsController < ApplicationController
 
     delete '/bets/:id' do
         @bet = Bet.find_by_id(params[:id])
-        @post.destroy
-        redirect "/posts"
+        @bet.destroy
+        redirect "/bets"
     end
 
     
