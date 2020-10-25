@@ -1,21 +1,20 @@
 class BetsController < ApplicationController
 
     get '/bets' do
-        if logged_in?
-            @bets = Bet.all
-            erb :"bets/index"
-        else
-            redirect "/login"
-        end
+        redirect_if_not_logged_in
+        @bets = Bet.all
+        erb :"bets/index"
     end
 
 
     get '/bets/new' do
-        Bet.new
+        redirect_if_not_logged_in
+        @users = User.all
         erb :"bets/new"
     end
 
     get '/bets/:id' do 
+        redirect_if_not_logged_in
         @bet = Bet.find_by_id(params[:id])
         erb :"bets/show"
     end
@@ -30,6 +29,7 @@ class BetsController < ApplicationController
     end
 
     get '/bets/:id/edit' do
+        redirect_if_not_logged_in
         @users = User.all
         @bet = Bet.find_by(params[:id])
         if @bet.user_id == current_user.id
@@ -52,7 +52,9 @@ class BetsController < ApplicationController
 
     delete '/bets/:id' do
         @bet = Bet.find_by_id(params[:id])
-        @bet.destroy
+        if @bet.user.id == current_user.id
+            @bet.destroy
+        end
         redirect "/bets"
     end
 
