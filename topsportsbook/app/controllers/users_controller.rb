@@ -12,4 +12,5 @@ class UsersController < ApplicationController
         else
             erb:"users/signup"
         end
+    end
 end
