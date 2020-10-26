@@ -52,7 +52,7 @@ class BetsController < ApplicationController
 
     delete '/bets/:id' do
         @bet = Bet.find_by_id(params[:id])
-        if @bet.user.id == current_user.id
+        if @bet.user_id == current_user.id
             @bet.destroy
         end
         redirect "/bets"
