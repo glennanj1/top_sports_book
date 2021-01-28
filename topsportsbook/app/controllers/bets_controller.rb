@@ -20,9 +20,12 @@ class BetsController < ApplicationController
     end
 
     post '/bets' do
-        bet = Bet.new(params)
-        if bet.save
-            redirect "bets/#{bet.id}"
+        
+        @bet = Bet.new(params)
+        @bet.user_id = current_user.id
+        
+        if @bet.save
+            redirect "bets/#{@bet.id}"
         else
             redirect "bets/new"
         end
@@ -31,7 +34,7 @@ class BetsController < ApplicationController
     get '/bets/:id/edit' do
         redirect_if_not_logged_in
         @users = User.all
-        @bet = Bet.find_by(params[:id])
+        @bet = Bet.find(params[:id])
         if @bet.user_id == current_user.id
             erb :"bets/edit"
         else
