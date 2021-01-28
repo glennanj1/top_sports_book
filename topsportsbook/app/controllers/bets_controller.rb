@@ -23,7 +23,7 @@ class BetsController < ApplicationController
         
         @bet = Bet.new(params)
         @bet.user_id = current_user.id
-        
+
         if @bet.save
             redirect "bets/#{@bet.id}"
         else
@@ -35,6 +35,8 @@ class BetsController < ApplicationController
         redirect_if_not_logged_in
         @users = User.all
         @bet = Bet.find(params[:id])
+
+        
         if @bet.user_id == current_user.id
             erb :"bets/edit"
         else
@@ -54,7 +56,7 @@ class BetsController < ApplicationController
     end
 
     delete '/bets/:id' do
-        @bet = Bet.find_by_id(params[:id])
+        @bet = Bet.find(params[:id])
         if @bet.user_id == current_user.id
             @bet.destroy
         end
