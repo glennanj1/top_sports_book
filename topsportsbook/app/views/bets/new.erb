@@ -1,4 +1,4 @@
-<h1> Keep Track of Your Bets Below </h1>
+<h1> Who's Winning Tonight <%= current_user.username %> </h1>
 
     <form method="POST" action="/bets">
         Team: <input type="text" name="team"><br />
@@ -7,4 +7,6 @@
 
         <input type="submit">
     </form>
+
+    
 

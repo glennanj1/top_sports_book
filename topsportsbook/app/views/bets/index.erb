@@ -1,8 +1,11 @@
-<h1> Here are your bets! </h1>
+<h1> Here are Todays Top Bets! </h1>
 
 <ul>
     <% @bets.each do | bet | %>
         <li><a href="/bets/<%= bet.id%>"> <%= bet.team %> </a></li>
     <% end  %>
 </ul>
+<p>
+  <h4><a href="/bets/new">Make a new Bet?</a></h4><br />
+</p>
 
