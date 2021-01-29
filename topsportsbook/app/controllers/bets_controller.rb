@@ -20,7 +20,7 @@ class BetsController < ApplicationController
     end
 
     post '/bets' do
-        
+        redirect_if_not_logged_in
         @bet = Bet.new(params)
         @bet.user_id = current_user.id
 
@@ -46,6 +46,7 @@ class BetsController < ApplicationController
     end
 
     patch '/bets/:id' do
+        redirect_if_not_logged_in
         @bet = Bet.find_by_id(params[:id])
         params.delete("_method")
         if @bet.update(params)
@@ -56,11 +57,13 @@ class BetsController < ApplicationController
     end
 
     delete '/bets/:id' do
+        redirect_if_not_logged_in
         @bet = Bet.find(params[:id])
+        
         if @bet.user_id == current_user.id
-            @bet.destroy
+            @bet.delete
         end
-        redirect "/bets"
+        redirect "/login"
     end
 
     

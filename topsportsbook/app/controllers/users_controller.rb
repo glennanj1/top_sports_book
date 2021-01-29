@@ -10,7 +10,6 @@ class UsersController < ApplicationController
             session[:user_id] = @user.id
             redirect "/bets"
         else
-        binding.pry
             erb :"users/signup"
         end
     end
