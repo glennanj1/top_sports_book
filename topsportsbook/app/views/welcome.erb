@@ -1,13 +1,16 @@
-<div class="container">
-  <header><img src="images/olympic_resize.png" class="img-responsive main-image"></header>
-  <div class="col-md-8 col-md-offset-2">
-    <h2>Top Sports Book Football Bet Tracker</h2>
-    <div class="content">
-      <p>Welcome!</p>
-      
-      <a href="/bets"> Take me to the Action. </a><br />
 
-      <a href="/bets/new"> Make some action </a><br />
+<div class="container">
+  
+  <img src="images/olympic_resize.png" class="responsive">
+  <div class="col-md-8 col-md-offset-2">
+    <h2>Top Sports Book Bet Tracker</h2>
+    
+    <div class="content">
+      <h2>Welcome <%= current_user.username.titleize %></h2>
+      
+      <a href="/bets"><button>Take me to the Action</button></a><br />
+
+      <a href="/bets/new"><button>Make some action</button></a><br />
       
     </div>
   </div>

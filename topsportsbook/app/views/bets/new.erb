@@ -1,10 +1,17 @@
-<h1> Keep Track of Your Bets Below </h1>
+<h1> Who's Winning Tonight <%= current_user.username.titleize %> </h1>
+
+<h2>Betslip:</h2>
 
     <form method="POST" action="/bets">
-        Team: <input type="text" name="team"><br />
-        Amount: <input type="number" name="amount"><br />
-        Date: <input type="text" name="date"><br />
-
-        <input type="submit">
+        Team:<br>
+        <input type="text" name="team"><br>
+        Amount:<br>
+        <input type="number" name="amount"><br>
+        Date:<br>
+        <input type="text" name="date"><br>
+    
+        <br><input type="submit">
     </form>
+
+    
 

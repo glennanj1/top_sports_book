@@ -19,15 +19,10 @@
         <%= yield %>
 
       <footer class="branding">
-        <% if logged_in? %>
-          <h4>Welcome <%= current_user.username %></h4>
-          <h4><a href="/logout">Log Out</a></h4>
-        <% else %>
-          <h4><a href="/login">Log In</a></h4>
-        <% end %>
-        <h4><a href="/bets/new">Make a new Bet?</a></h4><br />
+        
+        <!-- <h4><a href="/bets/new">Make a new Bet?</a></h4><br /> -->
 
-        <small>&copy; 2020 <strong>John Glennan</strong></small>
+        <small style="color:Tomato;">&copy; 2020 <strong>Top Sports Book</strong></small>
       </footer>
     </div>
 

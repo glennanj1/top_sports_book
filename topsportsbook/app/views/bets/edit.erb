@@ -2,17 +2,15 @@
 
 <form method="POST" action="/bets/<%= @bet.id %>">
     <input type="hidden" id="hidden" name="_method" value="PATCH">
-    <select name="user_id">
-        <% @users.each do | user |%>
-            <option value="<%= user.id %>"><%= user.username %></option>
-        <% end %>
-    </select><br />
 
-    Team: <input type="text" name="team"><br />
-    Date: <input type="text" name="date"><br />
-    Amount: <input type="number" name="amount"><br />
-    <input type="submit">
+    Team:<br>
+    <input type="text" name="team" value="<%=@bet.team %>"><br>
+    Date:<br> 
+    <input type="text" name="date" value="<%=@bet.date%>"><br>
+    Amount:<br> 
+    <input type="number" name="amount" value="<%=@bet.amount %>"><br>
 
+    <br><input type="submit">
 
 </form>
     

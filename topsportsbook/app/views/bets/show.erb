@@ -1,14 +1,15 @@
-<h1> Placed Bets </h1>
+<h1> Bet Placed: </h1>
 
 <h2>Team: <%= @bet.team %></h2>
 <h2>Date: <%= @bet.date %></h2>
 <h2>Amount: <%= @bet.amount %></h2>
 
-<a href="/bets/<%= @bet.id %>/edit">Edit this post</a><br />
-<a href="/bets"> Back to All Bets </a>
+<% if @bet.user_id == current_user.id %>
+    <a href="/bets/<%= @bet.id %>/edit"><button>Edit</button></a>
+    <form method="POST" action="/bets/<%= @bet.id %>">
+      <input type="hidden" id="hidden" name="_method" value="DELETE">
+      <input type="submit" value="delete">
+    </form>
+<% end %>
+<a href="/bets"><button>Back to All Bets</button></a>
 
-<h3>Delete Bet?</h3>
-<form method="POST" action="/bets/<%= @bet.id %>">
-    <input type="hidden" id="hidden" name="_method" value="DELETE">
-    <input type="submit" value="delete">
-</form>
