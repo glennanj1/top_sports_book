@@ -1,4 +1,4 @@
-# top_sports_book
+# Top Sports Book
 Sinatra application that allows users to store/retrieve their placed sports bets.
 
 # Install Instructions
