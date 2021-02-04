@@ -11,6 +11,10 @@ Lastly run shotgun in terminal and go to localhost:9393
 # Contributers Guide
 Feel free to clone this and contribute to this novice project. All are welcome to contribute. 
 
+# Picture Credit
+Picture by Nikon D3x on pixabay.
+https://pixabay.com/photos/stadium-olympic-stadium-structure-1590576/
+
 #License
 Copyright 2020 John Glennan
 
