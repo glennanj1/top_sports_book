@@ -14,7 +14,7 @@
 
   /* --- Welcome Page Styles --- */
   body {
-    background-color: lightblue;
+    background-color: rgba(173, 216, 230, 0.35);
     color: #333;
     font-family: Sans-Serif;
     line-height: 18px;
@@ -27,12 +27,13 @@
   }
 
   .wrapper {
+    border-radius: 20px;
     background: #fff;
     -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
     -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
     box-shadow: 0 0 10px rgba(0,0,0,.3);
     margin: 16px auto;
-    max-width: 960px;
+    max-width: 500px;
     padding: 2.25%; /* 18px / 800px */
     width: 85%;
   }
@@ -87,6 +88,19 @@
     border-top: 2px solid #ccc;
     margin-top: 20px;
     padding-top: 20px;
+  }
+
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom:0;
+    width: 100%;
+    padding: 10px;
+
+    height: 40px;
+    background-color: rgba(90, 169, 90, 0.467);
+    color: black;
+    text-align: left;
   }
 }
 

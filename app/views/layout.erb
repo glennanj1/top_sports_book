@@ -11,19 +11,13 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="/stylesheets/main.css" />
+    <link rel="stylesheet" href="/stylesheets/main.css?version=2" />
   </head>
   <body>
     <div class="wrapper">
 
         <%= yield %>
 
-      <footer class="branding">
-        
-        <!-- <h4><a href="/bets/new">Make a new Bet?</a></h4><br /> -->
-
-        <small style="color:Tomato;">&copy; 2020 <strong>Top Sports Book</strong></small>
-      </footer>
     </div>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
@@ -32,4 +26,12 @@
       <script>window.attachEvent("onload",function(){CFInstall.check({mode:"overlay"})})</script>
     <![endif]-->
   </body>
+  
+  <footer class="footer">
+        
+    <!-- <h4><a href="/bets/new">Make a new Bet?</a></h4><br /> -->
+
+    <h4 style="color:black;">&copy; 2020 <strong>Top Sports Book</strong></h4>
+  </footer>
+
 </html>
