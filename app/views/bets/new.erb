@@ -1,7 +1,8 @@
-<h1> Who's Winning Tonight <%= current_user.username.titleize %> </h1>
+<div class="wrapper"><h1> Who's Winning Tonight <%= current_user.username.titleize %> </h1></div>
 
+
+<div class="branding">
 <h2>Betslip:</h2>
-
     <form method="POST" action="/bets">
         Team:<br>
         <input type="text" name="team"><br>
@@ -12,6 +13,16 @@
     
         <br><input type="submit">
     </form>
+</div>
+
+<div class="wrapper"> 
+  <h2> NBA Matchup </h2>
+  <% @games.each do |game| %>
+    <div class="wrapper"><%= "Matchup: #{game.matchup}<br> Odds: #{game.odds}" %></div><br>
+  <% end %>
+</div>
+
+
 
     
 
