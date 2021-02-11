@@ -10,6 +10,7 @@ class BetsController < ApplicationController
     get '/bets/new' do
         redirect_if_not_logged_in
         @users = User.all
+        @games = Game.all
         erb :"bets/new"
     end
 
