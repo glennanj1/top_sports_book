@@ -1,8 +1,12 @@
 <h1> Bet Placed: </h1>
 
+<h2>User: <%= @name.username %></h2>
 <h2>Team: <%= @bet.team %></h2>
 <h2>Date: <%= @bet.date %></h2>
 <h2>Amount: <%= @bet.amount %></h2>
+
+<% binding.pry %>
+ 
 
 <% if @bet.user_id == current_user.id %>
     <a href="/bets/<%= @bet.id %>/edit"><button>Edit</button></a>

@@ -2,6 +2,7 @@ class BetsController < ApplicationController
 
     get '/bets' do
         redirect_if_not_logged_in
+        @users = User.all
         @bets = Bet.all
         erb :"bets/index"
     end
@@ -17,6 +18,8 @@ class BetsController < ApplicationController
     get '/bets/:id' do 
         redirect_if_not_logged_in
         @bet = Bet.find_by_id(params[:id])
+        user_id = @bet.user_id
+        @name = User.find_by(id: user_id)
         erb :"bets/show"
     end
 
