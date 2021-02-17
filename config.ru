@@ -6,6 +6,7 @@ end
 
 
 use Rack::MethodOverride
+use GamesController
 use UsersController
 use SessionsController
 use BetsController
