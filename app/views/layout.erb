@@ -11,7 +11,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="/stylesheets/main.css?version=4" />
+    <link rel="stylesheet" href="/stylesheets/main.css?version=5" />
   </head>
   <body>
     <div class="topnav">
@@ -19,7 +19,7 @@
       <a href="/bets">All Bets</a>
       <a href="/bets/new">New Bet</a>
       <a href="/games">Sports</a>
-      <a href="/user/account">Account</a>
+      <a href="/users/account">Account</a>
     </div>
 
     <div class="wrapper">
@@ -36,9 +36,11 @@
   
   <footer class="footer">
         
-    <!-- <h4><a href="/bets/new">Make a new Bet?</a></h4><br /> -->
+    <% if logged_in? %>
+      <h4><a href="/logout"><button>Log Out</button></a></h4>
+    <% end %>
 
-    <h4 style="color:black;">&copy; 2021 <strong>Top Sports Book</strong></h4>
+    <h4 style="color:black;">&copy; 2021 <strong>John Glennan</strong></h4>
   </footer>
 
 </html>

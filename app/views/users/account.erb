@@ -1,0 +1,9 @@
+<h1><strong>User Account Page<strong></h1>
+
+<h1><%= @users.username.capitalize %></h1>
+
+<a href="/users/<%= @user.id %>/edit"><button>Edit</button></a>
+    <form method="POST" action="/users/<%= @user.id %>">
+      <input type="hidden" id="hidden" name="_method" value="DELETE">
+      <input type="submit" value="delete">
+    </form>

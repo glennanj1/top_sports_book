@@ -1,0 +1,12 @@
+<h1>Edit your Username</h1>
+
+<form method="POST" action="/users/<%= @user.id %>">
+    <input type="hidden" id="hidden" name="_method" value="PATCH">
+
+    Username:<br>
+    <input type="text" name="username" value="<%=@user.username %>"><br>
+    
+
+    <br><input type="submit">
+
+</form>
