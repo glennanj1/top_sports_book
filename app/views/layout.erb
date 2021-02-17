@@ -11,13 +11,19 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="/stylesheets/main.css?version=2" />
+    <link rel="stylesheet" href="/stylesheets/main.css?version=4" />
   </head>
   <body>
+    <div class="topnav">
+      <a class="active" href="/welcome">Home</a>
+      <a href="/bets">All Bets</a>
+      <a href="/bets/new">New Bet</a>
+      <a href="/games">Sports</a>
+      <a href="/user/account">Account</a>
+    </div>
+
     <div class="wrapper">
-
-        <%= yield %>
-
+      <%= yield %>
     </div>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
@@ -25,7 +31,8 @@
       <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.2/CFInstall.min.js"></script>
       <script>window.attachEvent("onload",function(){CFInstall.check({mode:"overlay"})})</script>
     <![endif]-->
-  </body>
+
+  </body><br><br><br><br>
   
   <footer class="footer">
         
