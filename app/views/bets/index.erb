@@ -5,14 +5,7 @@
         <li><a href="/bets/<%= bet.id%>"> <%= bet.team %> <%= bet.date %></a></li>
     <% end  %>
 </ol>
-<p>
-  <h4><a href="/bets/new"><button>New Bet</button></a></h4><br />
-</p>
 
-        <% if logged_in? %>
-          <h4>Welcome <%= current_user.username.titleize %></h4>
-          <h4><a href="/logout"><button>Log Out</button></a></h4>
-        <% else %>
-          <h4><a href="/login">Log In</a></h4><br />
-        <% end %>
+
+        
 
