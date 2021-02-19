@@ -30,6 +30,12 @@ class ApplicationController < Sinatra::Base
       @user ||= User.find_by(id: session[:user_id])
     end
 
+    def current_bet
+      if current_user.bets.find_by(id: params[:id])
+
+      end
+    end
+
     def redirect_if_not_logged_in
       if !logged_in?
         redirect "/login"
@@ -41,6 +47,7 @@ class ApplicationController < Sinatra::Base
         redirect "/welcome"
       end
     end
+    
 
   end
 

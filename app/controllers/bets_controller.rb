@@ -18,8 +18,6 @@ class BetsController < ApplicationController
     get '/bets/:id' do 
         redirect_if_not_logged_in
         @bet = Bet.find_by_id(params[:id])
-        user_id = @bet.user_id
-        @name = User.find_by(id: user_id)
         erb :"bets/show"
     end
 
@@ -37,6 +35,7 @@ class BetsController < ApplicationController
 
     get '/bets/:id/edit' do
         redirect_if_not_logged_in
+
         @users = User.all
         @bet = Bet.find(params[:id])
         
@@ -50,12 +49,12 @@ class BetsController < ApplicationController
 
     patch '/bets/:id' do
         redirect_if_not_logged_in
-        @bet = Bet.find_by_id(params[:id])
         params.delete("_method")
-        if @bet.update(params)
+        if current_bet
+            @bet.update(params)
             redirect "/bets/#{@bet.id}"
         else
-            redirect "bets/new"
+            redirect "/bets"
         end
     end
 
@@ -63,7 +62,7 @@ class BetsController < ApplicationController
         redirect_if_not_logged_in
         @bet = Bet.find(params[:id])
         
-        if @bet.user_id == current_user.id
+        if @bet.user_id == current_user.id && current_bet
             @bet.delete
         end
         redirect "/bets"
