@@ -1,10 +1,12 @@
 <h1> Here are Todays Top Bets! </h1>
-
-<ol>
+  <ul>
     <% @bets.each do | bet | %>
-        <li><a href="/bets/<%= bet.id%>"> <%= bet.team %> <%= bet.date %></a></li>
+      <li class="wrapper">
+        <h4><a href="/bets/<%= bet.id%>">User: <%= bet.user.username %> Team:<%= bet.team %>Date:<%= bet.date %> Amount: $<%= bet.amount %></a></h4>
+      </li>
     <% end  %>
-</ol>
+  </ul>
+
 
 
         

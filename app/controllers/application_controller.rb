@@ -31,8 +31,9 @@ class ApplicationController < Sinatra::Base
     end
 
     def current_bet
-      if current_user.bets.find_by(id: params[:id])
-
+      @bet = current_user.bets.find_by(id: params[:id])
+      if !@bet
+        redirect "/bets"
       end
     end
 

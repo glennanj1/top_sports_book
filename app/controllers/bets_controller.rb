@@ -10,9 +10,14 @@ class BetsController < ApplicationController
 
     get '/bets/new' do
         redirect_if_not_logged_in
-        @users = User.all
         @games = Game.all
         erb :"bets/new"
+    end
+
+    get '/bets/risky' do
+        redirect_if_not_logged_in
+        @bets = Bet.all.select {|bet| bet.amount >= 800}
+        erb :"bets/index"
     end
 
     get '/bets/:id' do 
@@ -35,27 +40,20 @@ class BetsController < ApplicationController
 
     get '/bets/:id/edit' do
         redirect_if_not_logged_in
-
-        @users = User.all
-        @bet = Bet.find(params[:id])
-        
-        if @bet.user_id == current_user.id
-            erb :"bets/edit"
-        else
-            redirect "/bets"
-        end
-            
+        current_bet
+        erb :"bets/edit"      
     end
 
     patch '/bets/:id' do
         redirect_if_not_logged_in
         params.delete("_method")
-        if current_bet
-            @bet.update(params)
-            redirect "/bets/#{@bet.id}"
-        else
-            redirect "/bets"
-        end
+        # @bet = current_user.bets.find_by(id: params[:id])
+        # if !@bet
+        #     redirect "/bets"
+        # end
+        current_bet
+        @bet.update(params)
+        redirect "/bets/#{@bet.id}"
     end
 
     delete '/bets/:id' do

@@ -1,10 +1,10 @@
 User.destroy_all
 Bet.destroy_all
 
-10.times do 
+50.times do 
     User.create!(username: Faker::Name.name, password_digest: BCrypt::Password.create('1234'))
 end
 
-10.times do 
-    Bet.create!(amount: rand(100), team: Faker::Sports::Football.team, date: "Today", user: User.offset(rand(10)).first)
+50.times do 
+    Bet.create!(amount: rand(1000), team: Faker::Sports::Basketball.team, date: Faker::Date.between(from: '2021-02-19', to: '2021-02-21'), user: User.offset(rand(10)).first)
 end
