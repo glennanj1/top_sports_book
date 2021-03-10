@@ -1,6 +1,5 @@
 class Game < ActiveRecord::Base
 
-    require 'nokogiri'
     require 'pry'
     require 'open-uri'
     require 'csv'

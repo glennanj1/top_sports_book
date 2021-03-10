@@ -130,6 +130,7 @@ DEPENDENCIES
   dotenv
   faker
   foreman
+  nokogiri
   pg (~> 0.20)
   pry
   rack-test

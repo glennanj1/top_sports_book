@@ -13,6 +13,7 @@ gem 'tux'
 gem 'faker'
 gem 'dotenv'
 gem 'foreman' 
+gem 'nokogiri'
 
 group :development do
   gem 'rspec'
