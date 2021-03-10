@@ -13,10 +13,15 @@ gem 'bcrypt'
 gem 'tux'
 gem 'faker'
 gem 'dotenv'
+gem 'foreman' 
 
-group :test do
+group :development do
   gem 'rspec'
   gem 'capybara'
   gem 'rack-test'
   gem 'database_cleaner', git: 'https://github.com/bmabey/database_cleaner.git'
+end
+
+group :production do 
+  gem 'pg', '~> 0.20'
 end

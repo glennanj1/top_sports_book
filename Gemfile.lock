@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/bmabey/database_cleaner.git
-  revision: c889b94a6debf2c0103215ca905eafd04eead1d5
+  revision: 068656a246fcb56ab1385e7370b2740f5ebef5db
   specs:
     database_cleaner (2.0.1)
       database_cleaner-active_record (~> 2.0.0)
@@ -9,13 +9,13 @@ GIT
 GEM
   remote: http://rubygems.org/
   specs:
-    activemodel (5.2.4.4)
-      activesupport (= 5.2.4.4)
-    activerecord (5.2.4.4)
-      activemodel (= 5.2.4.4)
-      activesupport (= 5.2.4.4)
+    activemodel (5.2.4.5)
+      activesupport (= 5.2.4.5)
+    activerecord (5.2.4.5)
+      activemodel (= 5.2.4.5)
+      activesupport (= 5.2.4.5)
       arel (>= 9.0)
-    activesupport (5.2.4.4)
+    activesupport (5.2.4.5)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 0.7, < 2)
       minitest (~> 5.1)
@@ -42,20 +42,20 @@ GEM
     diff-lcs (1.4.4)
     dotenv (2.7.6)
     eventmachine (1.2.7)
-    faker (2.15.1)
+    faker (2.16.0)
       i18n (>= 1.6, < 2)
-    i18n (1.8.8)
+    foreman (0.87.2)
+    i18n (1.8.9)
       concurrent-ruby (~> 1.0)
     method_source (1.0.0)
     mini_mime (1.0.2)
-    mini_portile2 (2.5.0)
-    minitest (5.14.3)
+    minitest (5.14.4)
     mustermann (1.1.1)
       ruby2_keywords (~> 0.0.1)
-    nokogiri (1.11.1)
-      mini_portile2 (~> 2.5.0)
+    nokogiri (1.11.1-x86_64-darwin)
       racc (~> 1.4)
-    pry (0.13.1)
+    pg (0.21.0)
+    pry (0.14.0)
       coderay (~> 1.1)
       method_source (~> 1.0)
     public_suffix (4.0.6)
@@ -66,7 +66,7 @@ GEM
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rake (13.0.3)
-    regexp_parser (2.0.3)
+    regexp_parser (2.1.1)
     require_all (3.0.0)
     ripl (0.7.1)
       bond (~> 0.5.1)
@@ -118,7 +118,7 @@ GEM
       nokogiri (~> 1.8)
 
 PLATFORMS
-  ruby
+  x86_64-darwin-19
 
 DEPENDENCIES
   activerecord (~> 5.2)
@@ -127,6 +127,8 @@ DEPENDENCIES
   database_cleaner!
   dotenv
   faker
+  foreman
+  pg (~> 0.20)
   pry
   rack-test
   rake
@@ -140,4 +142,4 @@ DEPENDENCIES
   tux
 
 BUNDLED WITH
-   2.2.6
+   2.2.11
