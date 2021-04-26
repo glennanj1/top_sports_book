@@ -15,7 +15,7 @@ Feel free to contribute to this project.
 Picture by Nikon D3x on pixabay.
 https://pixabay.com/photos/stadium-olympic-stadium-structure-1590576/
 
-Privacy Policy
+# Privacy Policy
 Topsportsbook takes your privacy seriously. This policy page is to inform you of the personal information we gather, and how we use, store and protect it.
 Data We Collect
 In order to track the usage habits of our visitors, we collect data such as your IP address, your ISP (internet service provider), your web browser, the time you visited the site, and which pages you viewed during your visit. Except for the information you submit to topsportsbook, we do not gather or store any information which can be used to identify you personally (such as your name, email address, physical address, telephone number).
