@@ -2,11 +2,11 @@
 Sinatra application that allows users to store/retrieve their placed sports bets.
 
 # Install Instructions
-First dowload the file from github.
+First clone the file from github.
 Next open the file in a text editor.
 Then cd into the topsportsbook directory
-After that run bundle install in the directory
-Lastly run shotgun in terminal and go to localhost:9393
+run `bundle install`
+Lastly run `shotgun` in terminal and go to localhost:9393
 
 # Contributers Guide
 Feel free to contribute to this project. 
